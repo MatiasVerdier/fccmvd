@@ -1,8 +1,17 @@
-import type { AppProps /*, AppContext */ } from 'next/app'
-import '../styles/index.css'
+import type { AppProps /*, AppContext */ } from 'next/app';
+import '../styles/index.css';
+import Navigation from '@/components/navigation';
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    <div>
+      <Navigation />
+
+      <main>
+        <Component {...pageProps} />
+      </main>
+    </div>
+  );
 }
 
-export default MyApp
+export default MyApp;
