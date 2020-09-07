@@ -1,13 +1,11 @@
 module.exports = {
-  purge: [],
+  purge: ['./pages/**/*.tsx', './components/**/*.tsx'],
   theme: {
     extend: {},
   },
   variants: {},
-  plugins: [
-    require('@tailwindcss/ui')
-  ],
+  plugins: [require('@tailwindcss/ui')],
   future: {
-    removeDeprecatedGapUtilities: true
-  }
-}
+    removeDeprecatedGapUtilities: true,
+  },
+};
