@@ -1,10 +1,16 @@
+import Link from 'next/link';
+import { format, parseISO } from 'date-fns';
+
 export default function ArticleCard({
   image,
   title,
   description,
   author,
   date,
+  __resourcePath,
 }) {
+  const slug = __resourcePath.replace(/\.mdx$/, '');
+
   return (
     <div className="flex flex-col rounded-lg shadow-lg overflow-hidden">
       <div className="flex-shrink-0">
@@ -17,14 +23,16 @@ export default function ArticleCard({
               Blog
             </a>
           </p>
-          <a href="#" className="block">
-            <h3 className="mt-2 text-xl leading-7 font-semibold text-gray-900">
-              {title}
-            </h3>
-            <p className="mt-3 text-base leading-6 text-gray-500">
-              {description}
-            </p>
-          </a>
+          <Link href={slug}>
+            <a className="block">
+              <h3 className="mt-2 text-xl leading-7 font-semibold text-gray-900">
+                {title}
+              </h3>
+              <p className="mt-3 text-base leading-6 text-gray-500">
+                {description}
+              </p>
+            </a>
+          </Link>
         </div>
         <div className="mt-6 flex items-center">
           <div className="flex-shrink-0">
@@ -43,7 +51,7 @@ export default function ArticleCard({
               </a>
             </p>
             <div className="flex text-sm leading-5 text-gray-500">
-              <span>{date}</span>
+              <span>{format(parseISO(date), 'dd/LL/yyyy')}</span>
               <span className="mx-1">&middot;</span>
               <span>6 min read</span>
             </div>
