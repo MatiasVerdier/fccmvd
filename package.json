@@ -11,6 +11,7 @@
     "@tailwindcss/ui": "^0.5.0",
     "classnames": "^2.2.6",
     "next": "9.5.3",
+    "next-mdx-enhanced": "^4.0.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "tailwindcss": "^1.7.6"
