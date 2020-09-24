@@ -1,9 +1,10 @@
 import Head from 'next/head';
 import Hero from '@/components/hero';
 import Featured from '@/components/blog/featured';
-import { frontMatter as blogPosts } from './blog/**/*.mdx';
+import { getPosts } from '@/utils/posts';
 
 export default function Home() {
+  const posts = getPosts(3);
   return (
     <div>
       <Head>
@@ -13,7 +14,7 @@ export default function Home() {
 
       <Hero />
 
-      <Featured posts={blogPosts} />
+      <Featured posts={posts} />
     </div>
   );
 }
