@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { format, parseISO } from 'date-fns';
+import { getAuthor } from '@/utils/authors';
 
 export default function ArticleCard({
   image,
@@ -10,6 +11,7 @@ export default function ArticleCard({
   __resourcePath,
 }) {
   const slug = __resourcePath.replace(/\.mdx$/, '');
+  const authorData = getAuthor(author);
 
   return (
     <div className="flex flex-col rounded-lg shadow-lg overflow-hidden">
@@ -36,18 +38,20 @@ export default function ArticleCard({
         </div>
         <div className="mt-6 flex items-center">
           <div className="flex-shrink-0">
-            <a href="#">
-              <img
-                className="h-10 w-10 rounded-full"
-                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                alt=""
-              />
-            </a>
+            {authorData && authorData.avatar ? (
+              <a href="#">
+                <img
+                  className="h-10 w-10 rounded-full"
+                  src={authorData.avatar}
+                  alt=""
+                />
+              </a>
+            ) : null}
           </div>
           <div className="ml-3">
             <p className="text-sm leading-5 font-medium text-gray-900">
               <a href="#" className="hover:underline">
-                {author}
+                {authorData ? authorData.name : author}
               </a>
             </p>
             <div className="flex text-sm leading-5 text-gray-500">
