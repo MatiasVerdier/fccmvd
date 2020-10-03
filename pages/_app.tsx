@@ -1,6 +1,7 @@
 import type { AppProps /*, AppContext */ } from 'next/app';
 import '../styles/index.css';
 import Navigation from '@/components/navigation';
+import Footer from '@/components/footer';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -10,6 +11,8 @@ function MyApp({ Component, pageProps }: AppProps) {
       <main>
         <Component {...pageProps} />
       </main>
+
+      <Footer />
     </div>
   );
 }
