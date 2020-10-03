@@ -12,8 +12,7 @@ export default function Featured({ posts }) {
             Últimos artículos
           </h2>
           <p className="mt-3 max-w-2xl mx-auto text-xl leading-7 text-gray-500 sm:mt-4">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa
-            libero labore natus atque, ducimus sed.
+            Artículos generados por la comunidad para la comunidad
           </p>
         </div>
         <div className="mt-12 grid gap-5 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-none">
