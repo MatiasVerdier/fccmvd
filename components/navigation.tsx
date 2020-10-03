@@ -1,6 +1,8 @@
-import NavigationLink from '@/components/navigation-link';
-import cn from 'classnames';
 import { useState } from 'react';
+import cn from 'classnames';
+import Link from 'next/link';
+import NavigationLink from '@/components/navigation-link';
+import Logo from '@/components/logo';
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,21 +12,14 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex-shrink-0 flex items-center">
-            {/* Usar logo de fcc svg */}
-            <img
-              className="block lg:hidden h-8 w-auto"
-              src="https://tailwindui.com/img/logos/workflow-mark-on-dark.svg"
-              alt="Workflow logo"
-            />
-            <img
-              className="hidden lg:block h-8 w-auto"
-              src="https://tailwindui.com/img/logos/workflow-logo-on-dark.svg"
-              alt="Workflow logo"
-            />
-
-            <div className="hidden md:flex">
-              <NavigationLink href="/">Home</NavigationLink>
-            </div>
+            <Logo />
+            <Link href="/">
+              <a>
+                <h1 className="hidden md:block text-white ml-4">
+                  Free Code Camp Montevideo
+                </h1>
+              </a>
+            </Link>
           </div>
 
           <div className="flex">
@@ -66,9 +61,10 @@ export default function Navigation() {
             </div>
 
             <div className="hidden md:ml-6 md:flex md:items-center">
+              <NavigationLink href="/">Home</NavigationLink>
               <NavigationLink href="/about">Nosotros</NavigationLink>
-              <NavigationLink href="/events">Eventos</NavigationLink>
               <NavigationLink href="/blog">Blog</NavigationLink>
+              <NavigationLink href="/events">Eventos</NavigationLink>
             </div>
           </div>
         </div>
@@ -88,11 +84,11 @@ export default function Navigation() {
           <NavigationLink href="/about" isMobile>
             Nosotros
           </NavigationLink>
-          <NavigationLink href="/events" isMobile>
-            Eventos
-          </NavigationLink>
           <NavigationLink href="/blog" isMobile>
             Blog
+          </NavigationLink>
+          <NavigationLink href="/events" isMobile>
+            Eventos
           </NavigationLink>
         </div>
       </div>
