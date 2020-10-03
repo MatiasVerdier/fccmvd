@@ -5,10 +5,10 @@ import Footer from '@/components/footer';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <div>
+    <div className="flex flex-col min-h-screen">
       <Navigation />
 
-      <main>
+      <main className="flex-grow">
         <Component {...pageProps} />
       </main>
 
