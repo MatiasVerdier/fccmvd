@@ -5,7 +5,11 @@ export default function Layout({ children, frontMatter }) {
   return (
     <>
       <Head>
-        <title>{frontMatter.title}</title>
+        <link rel="icon" href="/favicon.ico" />
+        <title>
+          {`${frontMatter.title} | Free Code Camp Montevideo` ||
+            'Free Code Camp Montevideo'}
+        </title>
       </Head>
 
       <header className="mt-10">
