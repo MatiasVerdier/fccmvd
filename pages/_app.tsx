@@ -1,19 +1,28 @@
 import type { AppProps /*, AppContext */ } from 'next/app';
+import Head from 'next/head';
 import '../styles/index.css';
 import Navigation from '@/components/navigation';
 import Footer from '@/components/footer';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <div className="flex flex-col min-h-screen">
-      <Navigation />
+    <>
+      <Head>
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="alternate icon" href="/favicon.ico" />
+        <title>Free Code Camp Montevideo</title>
+      </Head>
 
-      <main className="flex-grow">
-        <Component {...pageProps} />
-      </main>
+      <div className="flex flex-col min-h-screen">
+        <Navigation />
 
-      <Footer />
-    </div>
+        <main className="flex-grow">
+          <Component {...pageProps} />
+        </main>
+
+        <Footer />
+      </div>
+    </>
   );
 }
 
