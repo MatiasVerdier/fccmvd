@@ -64,7 +64,6 @@ export default function Navigation() {
               <NavigationLink href="/">Home</NavigationLink>
               <NavigationLink href="/about">Nosotros</NavigationLink>
               <NavigationLink href="/blog">Blog</NavigationLink>
-              <NavigationLink href="/events">Eventos</NavigationLink>
             </div>
           </div>
         </div>
@@ -86,9 +85,6 @@ export default function Navigation() {
           </NavigationLink>
           <NavigationLink href="/blog" isMobile>
             Blog
-          </NavigationLink>
-          <NavigationLink href="/events" isMobile>
-            Eventos
           </NavigationLink>
         </div>
       </div>

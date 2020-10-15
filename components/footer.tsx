@@ -26,13 +26,6 @@ export default function Footer() {
               </a>
             </Link>
           </div>
-          <div className="px-5 py-2">
-            <Link href="/events">
-              <a className="text-base leading-6 text-gray-300 hover:text-white">
-                Eventos
-              </a>
-            </Link>
-          </div>
         </nav>
         <div className="mt-8 flex justify-center space-x-6">
           <a

@@ -16,8 +16,7 @@ export default function About() {
         Organizamos meetups o encuentros presenciales para conocernos, realizar
         charlas, talleres, trabajar en proyectos, hablar sobre oportunidades
         laborales o simplemente pasar un buen rato conversando sobre cosas que
-        nos gustan. Revisa la sección de <Link href="/events">eventos</Link>{' '}
-        para enterarte cuando será el próximo.
+        nos gustan.
       </p>
 
       <p>
