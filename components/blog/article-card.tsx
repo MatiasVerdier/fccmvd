@@ -56,8 +56,6 @@ export default function ArticleCard({
             </p>
             <div className="flex text-sm leading-5 text-gray-500">
               <span>{format(parseISO(date), 'dd/LL/yyyy')}</span>
-              <span className="mx-1">&middot;</span>
-              <span>6 min read</span>
             </div>
           </div>
         </div>
