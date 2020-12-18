@@ -8,9 +8,8 @@ export default function ArticleCard({
   description,
   author,
   date,
-  __resourcePath,
+  slug,
 }) {
-  const slug = __resourcePath.replace(/\.mdx$/, '');
   const authorData = getAuthor(author);
 
   return (

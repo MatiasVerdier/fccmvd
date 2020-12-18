@@ -1,10 +1,8 @@
-import Head from 'next/head';
 import Hero from '@/components/hero';
 import Featured from '@/components/blog/featured';
 import { getPosts } from '@/utils/posts';
 
-export default function Home() {
-  const posts = getPosts(3);
+export default function Home({ posts }) {
   return (
     <div>
       <Hero />
@@ -12,4 +10,14 @@ export default function Home() {
       <Featured posts={posts} />
     </div>
   );
+}
+
+export async function getStaticProps() {
+  const posts = getPosts(3);
+
+  return {
+    props: {
+      posts,
+    },
+  };
 }
