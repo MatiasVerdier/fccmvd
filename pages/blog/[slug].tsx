@@ -18,7 +18,7 @@ export default function BlogPost({ mdxSource, frontMatter }) {
   const content = hydrate(mdxSource);
 
   return (
-    <>
+    <div className="px-4">
       <Head>
         <title>
           {`${frontMatter.title} | Free Code Camp Montevideo` ||
@@ -34,7 +34,7 @@ export default function BlogPost({ mdxSource, frontMatter }) {
         {frontMatter.image ? <img src={frontMatter.image} /> : null}
         {content}
       </article>
-    </>
+    </div>
   );
 }
 
