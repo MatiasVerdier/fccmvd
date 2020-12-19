@@ -4,6 +4,8 @@ import matter from 'gray-matter';
 import fs from 'fs';
 import path from 'path';
 import Head from 'next/head';
+import remarkEmbedder from '@remark-embedder/core';
+import youtubeTransformer from '../../lib/youtube-transformer';
 
 const root = process.cwd();
 
@@ -50,7 +52,18 @@ export async function getStaticProps({ params }) {
     'utf8'
   );
   const { data, content } = matter(source);
-  const mdxSource = await renderToString(content);
+  const mdxSource = await renderToString(content, {
+    mdxOptions: {
+      remarkPlugins: [
+        [
+          remarkEmbedder,
+          {
+            transformers: [[youtubeTransformer]],
+          },
+        ],
+      ],
+    },
+  });
 
   // Return not found if the environment is production and the post is draft
   if (process.env.NODE_ENV === 'production' && data.draft) {

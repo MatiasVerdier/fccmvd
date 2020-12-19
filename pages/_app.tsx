@@ -1,10 +1,16 @@
+import React from 'react';
 import type { AppProps /*, AppContext */ } from 'next/app';
 import Head from 'next/head';
 import '../styles/index.css';
+import '../styles/lite-yt-embed.css';
 import Navigation from '@/components/navigation';
 import Footer from '@/components/footer';
 
 function MyApp({ Component, pageProps }: AppProps) {
+  React.useEffect(() => {
+    import('lite-youtube-embed/src/lite-yt-embed');
+  }, []);
+
   return (
     <>
       <Head>

@@ -8,11 +8,13 @@
     "start": "next start"
   },
   "dependencies": {
+    "@remark-embedder/core": "^1.2.1",
     "@tailwindcss/ui": "^0.7.2",
     "autoprefixer": "^10.0.2",
     "classnames": "^2.2.6",
     "date-fns": "^2.16.1",
     "gray-matter": "^4.0.2",
+    "lite-youtube-embed": "^0.1.2",
     "next": "^10.0.0",
     "next-mdx-remote": "^1.0.1",
     "postcss": "^8.1.8",
