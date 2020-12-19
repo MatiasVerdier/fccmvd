@@ -7,10 +7,6 @@ import Navigation from '@/components/navigation';
 import Footer from '@/components/footer';
 
 function MyApp({ Component, pageProps }: AppProps) {
-  React.useEffect(() => {
-    import('lite-youtube-embed/src/lite-yt-embed');
-  }, []);
-
   return (
     <>
       <Head>

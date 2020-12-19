@@ -1,3 +1,4 @@
+import React from 'react';
 import renderToString from 'next-mdx-remote/render-to-string';
 import hydrate from 'next-mdx-remote/hydrate';
 import matter from 'gray-matter';
@@ -10,6 +11,10 @@ import youtubeTransformer from '../../lib/youtube-transformer';
 const root = process.cwd();
 
 export default function BlogPost({ mdxSource, frontMatter }) {
+  React.useEffect(() => {
+    import('lite-youtube-embed/src/lite-yt-embed');
+  }, []);
+
   const content = hydrate(mdxSource);
 
   return (
