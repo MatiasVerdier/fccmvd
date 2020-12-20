@@ -36,6 +36,7 @@ const authors = [
     bio: 'Diseñador gráfico/web. Programador',
     web: 'https://matiascreaweb.uy',
     email: 'info@matiascreaweb.uy',
+    twitter: 'matiascreaweb',
   },
 ];
 
