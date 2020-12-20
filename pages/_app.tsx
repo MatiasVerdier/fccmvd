@@ -1,12 +1,26 @@
-import React from 'react';
-import type { AppProps /*, AppContext */ } from 'next/app';
+import React, { useEffect } from 'react';
+import { useRouter } from 'next/router';
 import Head from 'next/head';
+import type { AppProps /*, AppContext */ } from 'next/app';
 import '../styles/index.css';
 import '../styles/lite-yt-embed.css';
 import Navigation from '@/components/navigation';
 import Footer from '@/components/footer';
+import { pageView } from '../lib/gtag';
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const router = useRouter();
+
+  useEffect(() => {
+    const handleRouteChange = (url) => {
+      pageView(url);
+    };
+    router.events.on('routeChangeComplete', handleRouteChange);
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange);
+    };
+  }, [router.events]);
+
   return (
     <>
       <Head>
