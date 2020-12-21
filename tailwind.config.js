@@ -3,9 +3,12 @@ module.exports = {
   theme: {
     extend: {},
   },
-  variants: {},
-  plugins: [require('@tailwindcss/ui')],
-  future: {
-    removeDeprecatedGapUtilities: true,
+  variants: {
+    extend: {},
   },
+  plugins: [
+    require('@tailwindcss/aspect-ratio'),
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/typography'),
+  ],
 };

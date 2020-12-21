@@ -68,7 +68,7 @@ export default function BlogPost({ mdxSource, frontMatter }) {
         <h1 className="text-5xl mb-6">{frontMatter.title}</h1>
       </header>
 
-      <article className="container mx-auto prose lg:prose-xl py-10">
+      <article className="container mx-auto prose prose-indigo lg:prose-xl py-10">
         {frontMatter.image ? <img src={frontMatter.image} /> : null}
         {content}
       </article>
