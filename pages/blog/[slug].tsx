@@ -8,6 +8,8 @@ import { NextSeo, ArticleJsonLd } from 'next-seo';
 import remarkEmbedder from '@remark-embedder/core';
 import youtubeTransformer from '../../lib/youtube-transformer';
 import { getAuthor } from '@/utils/authors';
+import { format, parseISO } from 'date-fns';
+import { es } from 'date-fns/locale';
 
 const root = process.cwd();
 
@@ -65,6 +67,25 @@ export default function BlogPost({ mdxSource, frontMatter }) {
       />
 
       <header className="mt-10 mx-auto prose lg:prose-xl">
+        <div className="flex text-sm uppercase font-semibold text-gray-600">
+          {format(parseISO(frontMatter.date), `dd 'de' MMMM, yyyy`, {
+            locale: es,
+          })}
+
+          {frontMatter.tags && frontMatter.tags.length ? (
+            <>
+              <span className="inline-block mx-4">/</span>
+
+              <div className="flex space-x-2">
+                {frontMatter.tags.map((tag) => (
+                  <div key={tag} className="text-indigo-500">
+                    #{tag}
+                  </div>
+                ))}
+              </div>
+            </>
+          ) : null}
+        </div>
         <h1 className="text-5xl mb-6">{frontMatter.title}</h1>
       </header>
 

@@ -9,6 +9,7 @@ export default function ArticleCard({
   author,
   date,
   slug,
+  tags,
 }) {
   const authorData = getAuthor(author);
 
@@ -19,11 +20,17 @@ export default function ArticleCard({
       </div>
       <div className="flex-1 bg-white p-6 flex flex-col justify-between">
         <div className="flex-1">
-          <p className="text-sm leading-5 font-medium text-indigo-600">
-            <a href="#" className="hover:underline">
-              Blog
-            </a>
-          </p>
+          <div className="text-sm leading-5 font-medium text-indigo-600">
+            {tags && tags.length ? (
+              <div className="flex space-x-3">
+                {tags.map((tag) => (
+                  <div key={tag} className="text-indigo-500">
+                    {tag}
+                  </div>
+                ))}
+              </div>
+            ) : null}
+          </div>
           <Link href={slug}>
             <a className="block">
               <h3 className="mt-2 text-xl leading-7 font-semibold text-gray-900">
