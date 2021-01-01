@@ -1,6 +1,8 @@
 import Link from 'next/link';
 
 export default function Footer() {
+  const year = new Date().getFullYear();
+
   return (
     <footer className="bg-gray-800 flex-none">
       <div className="max-w-screen-xl mx-auto py-12 px-4 overflow-hidden space-y-8 sm:px-6 lg:px-8">
@@ -103,7 +105,7 @@ export default function Footer() {
           </a>
         </div>
         <p className="mt-8 text-center text-base leading-6 text-gray-400">
-          &copy; 2020 FreeCodeCamp Montevideo.
+          &copy; {year} FreeCodeCamp Montevideo.
         </p>
       </div>
     </footer>
