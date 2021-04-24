@@ -1,25 +1,16 @@
-import React, { useEffect } from 'react';
-import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 import Head from 'next/head';
 import type { AppProps /*, AppContext */ } from 'next/app';
-import '../styles/index.css';
-import '../styles/lite-yt-embed.css';
+import splitbee from '@splitbee/web';
 import Navigation from '@/components/navigation';
 import Footer from '@/components/footer';
-import { pageView } from '../lib/gtag';
+import '../styles/index.css';
+import '../styles/lite-yt-embed.css';
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const router = useRouter();
-
   useEffect(() => {
-    const handleRouteChange = (url) => {
-      pageView(url);
-    };
-    router.events.on('routeChangeComplete', handleRouteChange);
-    return () => {
-      router.events.off('routeChangeComplete', handleRouteChange);
-    };
-  }, [router.events]);
+    splitbee.init();
+  }, []);
 
   return (
     <>
