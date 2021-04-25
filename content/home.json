@@ -1,0 +1,9 @@
+{
+  "hero": {
+    "description": "Bienvenidos a la comunidad freeCodeCamp de Montevideo!!",
+    "cta": {
+      "text": "Únete a la comunidad",
+      "link": "https://www.facebook.com/groups/free.code.camp.montevideo"
+    }
+  }
+}
