@@ -1,12 +1,14 @@
 import Link from 'next/link';
+import { useCMS } from 'tinacms';
 
 export default function Footer() {
   const year = new Date().getFullYear();
+  const cms = useCMS();
 
   return (
-    <footer className="bg-gray-800 flex-none">
-      <div className="max-w-screen-xl mx-auto py-12 px-4 overflow-hidden space-y-8 sm:px-6 lg:px-8">
-        <nav className="-mx-5 -my-2 flex flex-wrap justify-center">
+    <footer className="flex-none bg-gray-800">
+      <div className="max-w-screen-xl px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8">
+        <nav className="flex flex-wrap justify-center -mx-5 -my-2">
           <div className="px-5 py-2">
             <Link href="/">
               <a className="text-base leading-6 text-gray-300 hover:text-white">
@@ -29,7 +31,7 @@ export default function Footer() {
             </Link>
           </div>
         </nav>
-        <div className="mt-8 flex justify-center space-x-6">
+        <div className="flex justify-center mt-8 space-x-6">
           <a
             href="https://www.facebook.com/groups/free.code.camp.montevideo"
             target="_blank"
@@ -38,7 +40,7 @@ export default function Footer() {
           >
             <span className="sr-only">Facebook</span>
             <svg
-              className="h-6 w-6"
+              className="w-6 h-6"
               aria-hidden="true"
               fill="currentColor"
               viewBox="0 0 24 24"
@@ -58,7 +60,7 @@ export default function Footer() {
           >
             <span className="sr-only">Twitter</span>
             <svg
-              className="h-6 w-6"
+              className="w-6 h-6"
               aria-hidden="true"
               fill="currentColor"
               viewBox="0 0 24 24"
@@ -74,7 +76,7 @@ export default function Footer() {
           >
             <span className="sr-only">GitHub</span>
             <svg
-              className="h-6 w-6"
+              className="w-6 h-6"
               aria-hidden="true"
               fill="currentColor"
               viewBox="0 0 24 24"
@@ -94,7 +96,7 @@ export default function Footer() {
           >
             <span className="sr-only">Discord</span>
             <svg
-              className="h-6 w-6"
+              className="w-6 h-6"
               viewBox="0 0 245 240"
               fillRule="evenodd"
               fill="currentColor"
@@ -104,9 +106,18 @@ export default function Footer() {
             </svg>
           </a>
         </div>
-        <p className="mt-8 text-center text-base leading-6 text-gray-400">
+        <p className="mt-8 text-base leading-6 text-center text-gray-400">
           &copy; {year} FreeCodeCamp Montevideo.
         </p>
+
+        <div className="text-center">
+          <button
+            onClick={() => cms.toggle()}
+            className="w-40 px-3 py-2 font-medium text-white transition duration-150 ease-in-out rounded-md hover:bg-gray-700 focus:outline-none"
+          >
+            {cms.enabled ? 'Exit Edit Mode' : 'Edit This Site'}
+          </button>
+        </div>
       </div>
     </footer>
   );
