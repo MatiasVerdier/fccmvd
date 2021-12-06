@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
     "@remark-embedder/core": "^2.0.0",
@@ -34,6 +35,8 @@
     "@types/node": "^14.18.0",
     "@types/react": "^17.0.37",
     "babel-plugin-import-glob-array": "^0.2.0",
+    "eslint": "8.4.0",
+    "eslint-config-next": "12.0.7",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-preset-env": "^7.0.1",
     "typescript": "^4.5.2"

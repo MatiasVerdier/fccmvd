@@ -10,6 +10,7 @@ import youtubeTransformer from '../../lib/youtube-transformer';
 import { getAuthor } from '@/utils/authors';
 import { format, parseISO } from 'date-fns';
 import { es } from 'date-fns/locale';
+import Image from 'next/image'
 
 const root = process.cwd();
 
@@ -90,7 +91,10 @@ export default function BlogPost({ mdxSource, frontMatter }) {
       </header>
 
       <article className="container mx-auto prose prose-indigo lg:prose-xl py-10">
-        {frontMatter.image ? <img src={frontMatter.image} /> : null}
+        {frontMatter.image ? 
+          <div className="relative w-full h-96">
+            <Image src={frontMatter.image} alt="Post hero image" layout="fill" objectFit="cover" />
+          </div> : null}
         {content}
       </article>
     </div>

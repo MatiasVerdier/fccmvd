@@ -16,7 +16,7 @@ const authors = [
     github: 'MatiasVerdier',
     twitter: 'matiasvj',
     email: 'verdier.matias@gmail.com',
-    avatar: 'https://avatars2.githubusercontent.com/u/5176883?v=3',
+    avatar: 'https://avatars3.githubusercontent.com/u/5176883?v=3',
     company: 'WyeWorks',
     web: 'https://matiasverdier.com',
   },

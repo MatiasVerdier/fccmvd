@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { format, parseISO } from 'date-fns';
 import { getAuthor } from '@/utils/authors';
+import Image from 'next/image'
 
 export default function ArticleCard({
   image,
@@ -15,8 +16,8 @@ export default function ArticleCard({
 
   return (
     <div className="flex flex-col rounded-lg shadow-lg overflow-hidden">
-      <div className="flex-shrink-0">
-        <img className="h-48 w-full object-cover" src={image} alt="" />
+      <div className="flex-shrink-0 h-48 w-full relative">
+        <Image src={image} alt="Post image" layout="fill" objectFit="cover" />
       </div>
       <div className="flex-1 bg-white p-6 flex flex-col justify-between">
         <div className="flex-1">
@@ -46,10 +47,12 @@ export default function ArticleCard({
           <div className="flex-shrink-0">
             {authorData && authorData.avatar ? (
               <a href="#">
-                <img
-                  className="h-10 w-10 rounded-full"
+                <Image
+                  className="rounded-full"
+                  width="40"
+                  height="40"
                   src={authorData.avatar}
-                  alt=""
+                  alt={authorData.name}
                 />
               </a>
             ) : null}
