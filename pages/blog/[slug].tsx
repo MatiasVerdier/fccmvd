@@ -1,6 +1,6 @@
 import React from 'react';
-import renderToString from 'next-mdx-remote/render-to-string';
-import hydrate from 'next-mdx-remote/hydrate';
+import { serialize } from 'next-mdx-remote/serialize';
+import { MDXRemote } from 'next-mdx-remote';
 import matter from 'gray-matter';
 import fs from 'fs';
 import path from 'path';
@@ -19,7 +19,6 @@ export default function BlogPost({ mdxSource, frontMatter }) {
     import('lite-youtube-embed/src/lite-yt-embed');
   }, []);
 
-  const content = hydrate(mdxSource);
   const authorData = getAuthor(frontMatter.author);
 
   return (
@@ -95,7 +94,7 @@ export default function BlogPost({ mdxSource, frontMatter }) {
           <div className="relative w-full h-96">
             <Image src={frontMatter.image} alt="Post hero image" layout="fill" objectFit="cover" />
           </div> : null}
-        {content}
+          <MDXRemote {...mdxSource} />
       </article>
     </div>
   );
@@ -121,7 +120,7 @@ export async function getStaticProps({ params }) {
     'utf8'
   );
   const { data, content } = matter(source);
-  const mdxSource = await renderToString(content, {
+  const mdxSource = await serialize(content, {
     mdxOptions: {
       remarkPlugins: [
         [

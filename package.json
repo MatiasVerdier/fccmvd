@@ -20,7 +20,7 @@
     "gray-matter": "^4.0.3",
     "lite-youtube-embed": "^0.2.0",
     "next": "^12.0.7",
-    "next-mdx-remote": "^2.1.4",
+    "next-mdx-remote": "^3.0.8",
     "next-seo": "^4.28.1",
     "next-tinacms-github": "^0.40.0",
     "postcss": "^8.4.4",
