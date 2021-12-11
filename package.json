@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@giscus/react": "^1.0.1",
     "@remark-embedder/core": "^2.0.0",
     "@splitbee/web": "^0.3.0",
     "@tailwindcss/aspect-ratio": "^0.3.0",
