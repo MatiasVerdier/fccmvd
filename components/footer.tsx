@@ -69,7 +69,7 @@ export default function Footer() {
             </svg>
           </a>
           <a
-            href="https://github.com/FreeCodeCampMontevideo"
+            href="https://github.com/MatiasVerdier/fccmvd"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-400 hover:text-gray-300"
@@ -89,7 +89,7 @@ export default function Footer() {
             </svg>
           </a>
           <a
-            href="https://discord.gg/akxwRSd"
+            href="https://discord.gg/D2hsf64ahU"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-400 hover:text-gray-300"
